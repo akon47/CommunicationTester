@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:CommunicationTester"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="Themes/Theme.xaml" />
     </Application.Resources>
 </Application>

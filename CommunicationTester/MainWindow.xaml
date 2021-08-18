@@ -4,9 +4,163 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CommunicationTester"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        mc:Ignorable="d" ResizeMode="CanMinimize" WindowStyle="SingleBorderWindow"
+        Title="Communication Tester" Width="800" SizeToContent="Height">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="225"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.Resources>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="HorizontalAlignment" Value="Right" />
+                    <Setter Property="TextAlignment" Value="Center" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="0,0,3,0" />
+                </Style>
+            </Grid.Resources>
+
+            <GroupBox Header="통신 설정" Margin="5">
+                <StackPanel Orientation="Vertical" Margin="2.5">
+                    <GroupBox Margin="2.5">
+                        <GroupBox.Header>
+                            <RadioButton Content="TCP 서버/클라이언트"/>
+                        </GroupBox.Header>
+                        <Grid Margin="5,0,0,0" Grid.IsSharedSizeScope="True">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <StackPanel Orientation="Vertical">
+                                <RadioButton Content="서버" Margin="5" />
+                                <Grid Margin="10,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="title"/>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="포트" />
+                                    <TextBox Grid.Column="1" Margin="3" MaxLength="5"/>
+                                </Grid>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Orientation="Vertical">
+                                <RadioButton Content="클라이언트" Margin="5" />
+                                <Grid Margin="10,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="title"/>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="아이피" />
+                                    <TextBlock Grid.Column="0" Grid.Row="1" Text="포트" />
+
+                                    <TextBox Grid.Column="1" Grid.Row="0" Margin="3" TextAlignment="Center" MaxLength="15" Text="###.###.###.###"/>
+                                    <TextBox Grid.Column="1" Grid.Row="1" Margin="3" TextAlignment="Center" MaxLength="5"/>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Margin="2.5">
+                        <GroupBox.Header>
+                            <RadioButton Content="UDP 서버/클라이언트"/>
+                        </GroupBox.Header>
+                        <Grid Margin="5,0,0,0" Grid.IsSharedSizeScope="True">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <StackPanel Orientation="Vertical">
+                                <RadioButton Content="서버" Margin="5" />
+                                <Grid Margin="10,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="title"/>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Text="포트" />
+                                    <TextBox Grid.Column="1" Margin="3" MaxLength="5"/>
+                                </Grid>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1" Orientation="Vertical">
+                                <RadioButton Content="클라이언트" Margin="5" />
+                                <Grid Margin="10,0,0,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="title"/>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Column="0" Grid.Row="0" Text="아이피" />
+                                    <TextBlock Grid.Column="0" Grid.Row="1" Text="포트" />
+
+                                    <TextBox Grid.Column="1" Grid.Row="0" Margin="3" TextAlignment="Center" MaxLength="15" Text="###.###.###.###"/>
+                                    <TextBox Grid.Column="1" Grid.Row="1" Margin="3" TextAlignment="Center" MaxLength="5"/>
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Margin="2.5">
+                        <GroupBox.Header>
+                            <RadioButton Content="포트 (COM &amp; LPT)"/>
+                        </GroupBox.Header>
+                        <Grid Margin="5,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="title"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="포트" />
+                            <TextBlock Grid.Column="0" Grid.Row="1" Text="비트/초" />
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="데이터 비트" />
+                            <TextBlock Grid.Column="0" Grid.Row="3" Text="패리티" />
+                            <TextBlock Grid.Column="0" Grid.Row="4" Text="정지 비트" />
+                            <TextBlock Grid.Column="0" Grid.Row="5" Text="흐름 제어" />
+
+                            <ComboBox Grid.Column="1" Grid.Row="0" Margin="3" IsEditable="True"/>
+                            <ComboBox Grid.Column="1" Grid.Row="1" Margin="3" />
+                            <ComboBox Grid.Column="1" Grid.Row="2" Margin="3" />
+                            <ComboBox Grid.Column="1" Grid.Row="3" Margin="3" />
+                            <ComboBox Grid.Column="1" Grid.Row="4" Margin="3" />
+                            <ComboBox Grid.Column="1" Grid.Row="5" Margin="3" />
+                        </Grid>
+                    </GroupBox>
+                    <UniformGrid Rows="1" Height="35">
+                        <UniformGrid.Resources>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Margin" Value="5" />
+                            </Style>
+                        </UniformGrid.Resources>
+                        <Button Content="열기" />
+                        <Button Content="닫기" />
+                    </UniformGrid>
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+        <UniformGrid Grid.Column="1" Grid.Row="0" Rows="1">
+            <GroupBox Header="송신" Margin="0,5,5,5">
+                
+            </GroupBox>
+            <GroupBox Header="수신" Margin="0,5,5,5">
+
+            </GroupBox>
+        </UniformGrid>
+        <StatusBar Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="0,1,0,0" BorderBrush="DarkGray">
+            <TextBlock Text="상태" Margin="5,0,0,0"/>
+        </StatusBar>
     </Grid>
 </Window>
