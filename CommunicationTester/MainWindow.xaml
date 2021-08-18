@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CommunicationTester"
+        xmlns:hexEditor="clr-namespace:HexEditor"
         mc:Ignorable="d" ResizeMode="CanMinimize" WindowStyle="SingleBorderWindow"
         Title="Communication Tester" Width="800" SizeToContent="Height">
     <Grid>
@@ -151,12 +151,12 @@
                 </StackPanel>
             </GroupBox>
         </Grid>
-        <UniformGrid Grid.Column="1" Grid.Row="0" Rows="1">
-            <GroupBox Header="송신" Margin="0,5,5,5">
-                
+        <UniformGrid Grid.Column="1" Grid.Row="0" Columns="1">
+            <GroupBox Header="송신" Margin="0,5,5,2.5">
+                <hexEditor:HexEditorControl />
             </GroupBox>
-            <GroupBox Header="수신" Margin="0,5,5,5">
-
+            <GroupBox Header="수신" Margin="0,2.5,5,5">
+                <hexEditor:HexEditorControl />
             </GroupBox>
         </UniformGrid>
         <StatusBar Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="0,1,0,0" BorderBrush="DarkGray">
