@@ -67,6 +67,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Communication\BaseCommunication.cs" />
+    <Compile Include="Communication\DataReceived.cs" />
+    <Compile Include="Communication\Status.cs" />
     <Compile Include="HexEditor\HexEditorControl.xaml.cs">
       <DependentUpon>HexEditorControl.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NotifyPropertyBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
