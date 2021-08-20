@@ -70,6 +70,7 @@
     <Compile Include="Communication\BaseCommunication.cs" />
     <Compile Include="Communication\DataReceived.cs" />
     <Compile Include="Communication\Status.cs" />
+    <Compile Include="HexEditor\ByteItem.cs" />
     <Compile Include="HexEditor\HexEditorControl.xaml.cs">
       <DependentUpon>HexEditorControl.xaml</DependentUpon>
     </Compile>
