@@ -8,10 +8,32 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <UniformGrid Columns="8" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <UniformGrid.Resources>
+                <Style TargetType="{x:Type local:ByteItem}">
+                    <Setter Property="Padding" Value="5" />
+                    <Setter Property="Background" Value="Transparent" />
+                    <Setter Property="Foreground" Value="Black" />
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="DarkBlue" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="SkyBlue" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </UniformGrid.Resources>
+
             <local:ByteItem />
             <local:ByteItem />
             <local:ByteItem />
             <local:ByteItem />
+            <local:ByteItem />
+            <local:ByteItem />
+            <local:ByteItem />
+            <local:ByteItem />
+            
             <local:ByteItem />
             <local:ByteItem />
             <local:ByteItem />
