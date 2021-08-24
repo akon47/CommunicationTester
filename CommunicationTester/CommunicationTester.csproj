@@ -74,6 +74,7 @@
     <Compile Include="HexEditor\HexEditorControl.xaml.cs">
       <DependentUpon>HexEditorControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HexEditor\HexEditorGrid.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

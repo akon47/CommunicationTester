@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,25 @@ namespace HexEditor
 	/// </summary>
 	public partial class HexEditorControl : UserControl
 	{
+        //public Brush Foreground
+        //{
+        //    get => (Brush)GetValue(ForegroundProperty);
+        //    set => SetValue(ForegroundProperty, value);
+        //}
+        //public static readonly DependencyProperty ForegroundProperty = DependencyProperty.Register(
+        //    nameof(Foreground), typeof(Brush), typeof(HexEditorControl), new PropertyMetadata(Brushes.Black));
+
+        protected ObservableCollection<byte> Bytes { get; set; }
+
 		public HexEditorControl()
 		{
+            Bytes = new ObservableCollection<byte>();
 			InitializeComponent();
 		}
+
+        public void AddByte(byte value)
+        {
+
+        }
 	}
 }
